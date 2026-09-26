@@ -37,8 +37,15 @@
       .line { display: block; max-width: 28rem; margin-top: .75rem; line-height: 1.6; color: var(--petrol); }
       li.dark .line { color: rgba(255,255,255,.75); }
       .host { display: inline-flex; gap: .5rem; margin-top: 1.25rem; font-size: .875rem; font-weight: 500; }
-      .panel { display: flex; align-items: flex-end; aspect-ratio: 4/3; padding: 1.5rem; background: var(--petrol); color: var(--paper); font-size: clamp(3rem, 6vw, 4.5rem); }
+      .panel { display: flex; align-items: flex-end; aspect-ratio: 16/9; padding: 1.5rem; background: var(--petrol); color: var(--paper); font-size: clamp(3rem, 6vw, 4.5rem); }
       li.dark .panel { background: var(--red); }
+      .flip { display: block; aspect-ratio: 16/9; perspective: 900px; }
+      .flip-inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 650ms cubic-bezier(.4,.1,.2,1); }
+      .flip:hover .flip-inner, a:focus-visible .flip-inner { transform: rotateY(180deg); }
+      .face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; }
+      .face-back { transform: rotateY(180deg); }
+      .face img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      @media (hover: none) { .flip-inner { transform: rotateY(180deg); } }
       footer { background: var(--ink); color: var(--paper); }
       footer .wrap { align-items: flex-end; padding: 3.5rem 0; }
       footer p { margin: 0; }
@@ -77,12 +84,12 @@
         </div>
       </section>
       <ul id="work">
-        <li><div class="wrap"><a href="https://www.theauthorityengine.org/" target="_blank" rel="noreferrer"><p class="idx">01</p><span><h2>The Authority Engine</h2><span class="line">Its own site.</span><span class="host">theauthorityengine.org ↗</span></span><span class="panel">01</span></a></div></li>
+        <li><div class="wrap"><a href="https://www.theauthorityengine.org/" target="_blank" rel="noreferrer"><p class="idx">01</p><span><h2>The Authority Engine</h2><span class="line">Its own site.</span><span class="host">theauthorityengine.org ↗</span></span><span class="flip"><span class="flip-inner"><span class="panel face">01</span><span class="face face-back"><img src="https://assets.skool.com/f/1fc0042f64ac4d20a1ccd35f624f6c82/c9f4fa70ca8740a18a2be928b87e085386f7513de1e54f8a989003f4ba903f60.png" alt=""></span></span></span></a></div></li>
         <li class="dark"><div class="wrap"><a href="https://grokati.com/" target="_blank" rel="noreferrer"><p class="idx">02</p><span><h2>Grokati</h2><span class="line">High-signal news about Grok and xAI. Not affiliated with xAI.</span><span class="host">grokati.com ↗</span></span><span class="panel">02</span></a></div></li>
         <li><div class="wrap"><a href="https://tunnelati.com/" target="_blank" rel="noreferrer"><p class="idx">03</p><span><h2>Tunnelati</h2><span class="line">Independent coverage of The Boring Company. Not affiliated with them.</span><span class="host">tunnelati.com ↗</span></span><span class="panel">03</span></a></div></li>
-        <li class="dark"><div class="wrap"><a href="https://www.skool.com/content-revenue-lab-4761" target="_blank" rel="noreferrer"><p class="idx">04</p><span><h2>The Content Revenue Lab</h2><span class="line">Content creation for creators over 40.</span><span class="host">skool.com ↗</span></span><span class="panel">04</span></a></div></li>
-        <li><div class="wrap"><a href="https://www.skool.com/youtube-for-skool-6875" target="_blank" rel="noreferrer"><p class="idx">05</p><span><h2>YouTube For Skool</h2><span class="line">Get paid members into your Skool community using YouTube.</span><span class="host">skool.com ↗</span></span><span class="panel">05</span></a></div></li>
-        <li class="dark"><div class="wrap"><a href="https://www.skool.com/grok-for-creators-1044" target="_blank" rel="noreferrer"><p class="idx">06</p><span><h2>Grok For Creators</h2><span class="line">For digital creators who use Grok.</span><span class="host">skool.com ↗</span></span><span class="panel">06</span></a></div></li>
+        <li class="dark"><div class="wrap"><a href="https://www.skool.com/content-revenue-lab-4761" target="_blank" rel="noreferrer"><p class="idx">04</p><span><h2>The Content Revenue Lab</h2><span class="line">Content creation for creators over 40.</span><span class="host">skool.com ↗</span></span><span class="flip"><span class="flip-inner"><span class="panel face">04</span><span class="face face-back"><img src="https://assets.skool.com/f/bce983fe17bd4157910778a377e2864a/013353860bcb4d52bf32b1dad7050ff729b0793f72ee4a12b24e144b036beee4-md.png" alt=""></span></span></span></a></div></li>
+        <li><div class="wrap"><a href="https://www.skool.com/youtube-for-skool-6875" target="_blank" rel="noreferrer"><p class="idx">05</p><span><h2>YouTube For Skool</h2><span class="line">Get paid members into your Skool community using YouTube.</span><span class="host">skool.com ↗</span></span><span class="flip"><span class="flip-inner"><span class="panel face">05</span><span class="face face-back"><img src="https://assets.skool.com/f/68a07806720f44628e6ba77e596c9dd6/331747f5d0a441cdbf406f8fbe915e6b66aa9dc9847646a88f45ff015b0725f1.jpg" alt=""></span></span></span></a></div></li>
+        <li class="dark"><div class="wrap"><a href="https://www.skool.com/grok-for-creators-1044" target="_blank" rel="noreferrer"><p class="idx">06</p><span><h2>Grok For Creators</h2><span class="line">For digital creators who use Grok.</span><span class="host">skool.com ↗</span></span><span class="flip"><span class="flip-inner"><span class="panel face">06</span><span class="face face-back"><img src="https://assets.skool.com/f/587783a666824d9993e6725ba9df0d3e/e25d020af4104c84aa5d0998806a5ed6b61af52ebbb74c608366d0fc54f40447-md.png" alt=""></span></span></span></a></div></li>
       </ul>
     </main>
     <footer>
